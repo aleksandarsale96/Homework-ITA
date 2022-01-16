@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aritmeticke operacije</title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div style="margin: 300px;"></div>
+	<div class="project-wrapper">
+		<h1> Program za obavljanje osnovnih aritmetičkih operacija  </h1>
+		<h3> Računske operacije koje je potrebno obaviti definišu se karakterima +, -, *, /.</h3>
+		<p style="display: flex; align-content: flex-end; justify-content: space-between; align-items: center; flex-wrap: nowrap;"> 
+			Unesite vrednost prvog broja : &nbsp; &nbsp;&nbsp;<input class="user-input" id="first-number" type = "number"> <br>
+			Unesite vrednost drugog broja : <input id="second-number" class="user-input" type="number"><br>
+			<button id="add" type="submit" class="submit-button"> Add </button>
+			<button id="subtract" type="submit" class="submit-button"> Subtract </button>
+			<button id="multiply" type="submit" class="submit-button"> Multiply </button>
+			<button id="divide" type="submit" class="submit-button"> Divide </button>
+			</p>
+		<div id="result-placeholder" > </div>
+	</div>
+	
+	
+	
+	<script>
+	
+
+		// Result Function
+		function displayResult([firstNumber, lastNumber], result) {
+		resultText.innerHTML = 'The result is : <span id="user-result">' + result + '</span>';
+		} 
+
+		// Validating inputs
+		function validateInputs() {
+		let errorMsg = "";
+		const firstNumber = parseFloat(document.getElementById("first-number").value);
+		const lastNumber = parseFloat(document.getElementById("second-number").value);
+		if (isNaN(firstNumber) || isNaN(lastNumber)) {
+			errorMsg = "Input values should be numbers and not empty.";
+		} return {
+			values: [firstNumber, lastNumber],
+			errorMsg
+		};
+		}
+
+		// Calclation Functions
+		function addition([num1, num2]){
+			return num1 + num2;
+		}
+
+		function subtraction([num1, num2]){
+			return num1 - num2;
+		}
+
+		function multiply([num1, num2]){
+			return num1 * num2;
+		}
+
+		function divide([num1, num2]){
+			return num1 / num2;
+		}
+
+		// Main Function //
+		const btnAdd = document.getElementById("add");
+		const btnSub = document.getElementById("subtract");
+		const btnMult = document.getElementById("multiply");
+		const btnDiv = document.getElementById("divide");
+
+		const buttons = [btnAdd, btnSub, btnMult, btnDiv];
+		const resultText = document.getElementById("result-placeholder");
+
+		for(let i = 0; i < buttons.length; i++){
+		buttons[i].addEventListener("click", function(){
+			const { errorMsg, values } = validateInputs();
+			if (errorMsg) {
+			displayError(errorMsg);
+			resultText.style.color = "aqua";
+			}else{
+			const results = [addition(values), subtraction(values), multiply(values), divide(values)];
+			const result = results[i];
+			displayResult(values, result);
+			resultText.style.color = "white";
+			}
+		});
+		}
+	</script>
+</body>
+</html>

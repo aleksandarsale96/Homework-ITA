@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(136, 167, 224);
+}
+.project-wrapper {
+    width: 70%;
+    height: auto;
+    background-color: #2a5adf;
+    margin-left: 15%;
+    margin-top: 0px;
+    font-family: cursive;
+    border-radius: 22px;
+}
+  
+.project-wrapper h1{
+    background-color: white;
+    padding: 10px;
+    margin: 0px;
+    }
+  
+.project-wrapper h3{
+    background-color: white;
+    border:1px solid green;
+    padding: 10px;
+    margin:0px;
+  }
+  
+.project-wrapper p{
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+    
+  }
+  
+  .user-input {
+    height: 45px;
+    width: 100px;
+    min-width: 60px;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+    border-radius: 13px;
+}
+  
+.submit-button {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: #0849ff;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all .5s;
+    padding: 0px 10px;
+}
+
+  .submit-button:hover{
+    background-color: white;
+    color: green;
+    transition: all .5s;
+    border: 1px solid rgb(236, 232, 238);
+  }
+
+  #result-placeholder {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: rgb(250, 249, 250);
+    margin: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+  #user-num, #user-result, #first-num, #last-num{ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(97, 6, 107);
+    font-size: 25px;
+    background-color: white;
+    padding: 2px 10px;
+    font-weight: 600;
+  }
+
+.yvanaplaceholder{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.yvana{
+  color: darkgreen;
+  text-decoration: none;
+ }
+
+.name{
+  color: crimson;
+}
